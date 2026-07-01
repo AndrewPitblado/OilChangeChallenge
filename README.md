@@ -1,4 +1,4 @@
-<p align="center"><img src="public/car-svgrepo-com.svg" width="200" alt="Car Logo"></a></p>
+<p align="center"><img src="public/car-svgrepo-com.svg" width="200" alt="Car Logo"></p>
 
 <h1 align="center">Oil Change Challenge</h1>
 
