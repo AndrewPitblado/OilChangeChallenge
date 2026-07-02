@@ -1,29 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="lofi">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Oil Change Checker</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-            rel="stylesheet"
-        />
-        <link
-            href="https://cdn.jsdelivr.net/npm/daisyui@1.14.0/dist/full.css"
-            rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.bunny.net" />
-        <link
-            href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap"
-            rel="stylesheet"
-        />
-    </head>
-    <body class="min-h-screen flex flex-col bg-base-200 font-sans">
-        <main class="flex-1 container mx-auto px-4 py-8">
+<x-layout>
+    <x-slot:title>
+        Need an oil change?
+    </x-slot:title>
             <div class="card bg-base-100 shadow max-w-xl mx-auto">
                 <div class="card-body">
                     <h1 class="text-3xl font-bold mb-4">
-                        Do I need an oil change?
+                        How are those oil levels looking?
                     </h1>
                     <p class="text-lg">
                         Use the form below to enter in your current odometer
@@ -103,10 +85,4 @@
                 </div>
             </div>
         </main>
-        <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
-            <div>
-                <p> {{date('Y')}} Built with ❤️ by Andrew Pitblado for Sara</p>
-            </div>
-        </footer>
-    </body>
-</html>
+</x-layout>
