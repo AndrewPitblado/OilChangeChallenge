@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\form_data;
+use App\Models\FormData;
 class FormController extends Controller
 {
     /**
@@ -25,20 +25,16 @@ class FormController extends Controller
             'last_oil_change_date' => 'required|date|before:today',
         ]);
 
-        $form_data = form_data::create($validatedData);
-        return view('result', compact('form_data'));
+        $formData = FormData::create($validatedData);
+        return redirect()->route('result.show', $formData)->with('success', 'Congratulations! Your form has been successfully submitted.');
     }
 
     /**
      * Display the results page unique to the submitted form data.
      */
-    public function show(string $id)
+    public function show(FormData $formData)
     {
-        $form_data = form_data::findOrFail($id);
-        
-        return view('result', [
-            'form_data' => $form_data,
-        ]);
+        return view('result', compact('formData'))->with('success', session('success'));
     }
 
 }
