@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Here's your results!
+         VEHIKL results!
     </x-slot:title>
     @if (session('success'))
         <div class="toast toast-top toast-center">
@@ -14,7 +14,7 @@
     @endif
     <div class="card bg-base-100 shadow max-w-xl mx-auto">
         <div class="card-body">
-            <h1 class="text-3xl font-bold mb-4">Here's your results!</h1>
+            <h1 class="text-3xl font-bold mb-4">VEHIKL results!</h1>
             <p class="text-lg">
                 Here are the details you submitted:
                 <ul>
@@ -32,7 +32,7 @@
                 <p class="text-lg mt-4 text-red-500 font-bold">
                     Since you have driven more than 5000km since your last oil change, it looks like its time for another one!
                 </p>
-            @elseif (now()->diffInMonths($formData->last_oil_change_date) > 6)
+            @elseif ($formData->last_oil_change_date->addMonths(6)->isPast())
                 <p class="text-lg mt-4 text-red-500 font-bold">
                     Looks like it's been more than 6 months since your last oil change (we have missed you), we'll see you at the shop!
                 </p>

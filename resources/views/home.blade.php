@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:title>
-        Need an oil change?
+        Does your VEHIKL need an oil change?
     </x-slot:title>
             <div class="card bg-base-100 shadow max-w-xl mx-auto">
                 <div class="card-body">

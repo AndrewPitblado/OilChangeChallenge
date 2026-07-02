@@ -20,7 +20,7 @@ class FormController extends Controller
     public function processForm(Request $request)
     {
         $validatedData = $request->validate([
-            'current_odometer' => 'required|integer|min:0|gt:previous_odometer',
+            'current_odometer' => 'required|integer|min:0|gte:previous_odometer',
             'previous_odometer' => 'required|integer|min:0',
             'last_oil_change_date' => 'required|date|before:today',
         ]);
