@@ -26,8 +26,8 @@
                         Do I need an oil change?
                     </h1>
                     <p class="text-lg">
-                        Use the form below to enter in your current odemeter
-                        reading, previous odemeter reading, and the date of your
+                        Use the form below to enter in your current odometer
+                        reading, previous odometer reading, and the date of your
                         last oil change.
                     </p>
 
