@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-
+use App\Models\form_data;
 class FormController extends Controller
 {
     /**
@@ -25,7 +25,8 @@ class FormController extends Controller
             'last_oil_change_date' => 'required|date|before:today',
         ]);
 
-        return view('result', $validatedData);
+        $form_data = form_data::create($validatedData);
+        return view('result', compact('form_data'));
     }
 
     /**
@@ -33,7 +34,11 @@ class FormController extends Controller
      */
     public function show(string $id)
     {
+        $form_data = form_data::findOrFail($id);
         
+        return view('result', [
+            'form_data' => $form_data,
+        ]);
     }
 
 }
