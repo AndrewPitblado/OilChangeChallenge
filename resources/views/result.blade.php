@@ -18,19 +18,19 @@
             <p class="text-lg text-accent">
                 Here are the details you submitted:
                 <ul class="list-disc list-inside mt-2 text-accent">
-                    <li class="mb-2 flex">Current Odometer Reading: <p class="font-bold px-4">{{ $formData->current_odometer }}</p></li>
-                    <li class="mb-2 flex">Previous Odometer Reading: <p class="font-bold px-4">{{ $formData->previous_odometer }}</p></li>
-                    <li class="mb-2 flex">Last Oil Change Date: <p class="font-bold px-4">{{ $formData->last_oil_change_date }}</p></li>
+                    <li class="mb-2 flex">Current Odometer Reading: <p class="font-bold px-4">{{ $formData->current_odometer }} km</p></li>
+                    <li class="mb-2 flex">Previous Odometer Reading: <p class="font-bold px-4">{{ $formData->previous_odometer }} km</p></li>
+                    <li class="mb-2 flex">Last Oil Change Date: <p class="font-bold px-4">{{ $formData->last_oil_change_date->format('F j, Y') }}</p></li>
                 </ul>
             </p>
             <p class="text-lg text-accent mt-4">
                 This means that you have driven
-                {{ $formData->current_odometer - $formData->previous_odometer }} kilometers since your
+                {{ $formData->current_odometer - $formData->previous_odometer }} km since your
                 last oil change.
             </p>
             @if ($formData->current_odometer - $formData->previous_odometer > 5000)
                 <p class="text-lg mt-4 mb-4 text-red-500 font-bold">
-                    Since you have driven more than 5000km since your last oil change, it looks like its time for another one!
+                    Since you have driven more than 5000 km since your last oil change, it looks like its time for another one!
                 </p>
                 <img src="{{ asset('mechanic-svgrepo-com.svg') }}" alt="mechanic" class="mx-auto w-50 h-50 mt-4 mb-4" />
                 <!-- Check to see if the last oil change was more than 6 months ago, using copy() so the original date is not modified -->
