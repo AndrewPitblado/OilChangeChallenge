@@ -2,13 +2,13 @@
     <x-slot:title>
         VEHIKL Oil Check
     </x-slot:title>
-            <div class="card bg-background-alt shadow max-w-xl mx-auto">
-                <div class="card-body">
+            <div class="card bg-background-alt rounded-md shadow max-w-xl mx-auto">
+                <div class="card-body px-6 py-8">
                     <div class="flex">
-                    <h1 class="text-3xl text-accent font-bold mb-4">
+                        <h1 class="text-3xl text-accent font-bold mb-4">
                         How are those oil levels looking?
-                    </h1>
-                    <img src="{{ asset('oil.svg') }}" alt="Oil Change Checker" class="w-12 h-12 ml-4" />    
+                        </h1>
+                        <img src="{{ asset('oil.svg') }}" alt="Oil Change Checker" class="w-12 h-12 ml-4" />    
                     </div>
                     <p class="text-lg text-accent mb-4">
                         Use the form below to enter in your current odometer

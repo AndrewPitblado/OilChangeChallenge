@@ -12,15 +12,15 @@
             </div>
         </div>
     @endif
-    <div class="card bg-background-alt shadow max-w-xl mx-auto">
-        <div class="card-body">
+    <div class="card bg-background-alt rounded-md shadow max-w-xl mx-auto">
+        <div class="card-body color-accent px-6 py-8">
             <h1 class="text-3xl text-accent font-bold mb-4">Your VEHIKL results!</h1>
             <p class="text-lg text-accent">
                 Here are the details you submitted:
                 <ul class="list-disc list-inside mt-2 text-accent">
-                    <li>Current Odometer Reading: {{$formData->current_odometer }}</li>
-                    <li>Previous Odometer Reading: {{ $formData->previous_odometer }}</li>
-                    <li>Last Oil Change Date: {{ $formData->last_oil_change_date }}</li>
+                    <li class="mb-2 flex">Current Odometer Reading: <p class="font-bold px-4">{{ $formData->current_odometer }}</p></li>
+                    <li class="mb-2 flex">Previous Odometer Reading: <p class="font-bold px-4">{{ $formData->previous_odometer }}</p></li>
+                    <li class="mb-2 flex">Last Oil Change Date: <p class="font-bold px-4">{{ $formData->last_oil_change_date }}</p></li>
                 </ul>
             </p>
             <p class="text-lg text-accent mt-4">
@@ -29,22 +29,25 @@
                 last oil change.
             </p>
             @if ($formData->current_odometer - $formData->previous_odometer > 5000)
-                <p class="text-lg mt-4 text-red-500 font-bold">
+                <p class="text-lg mt-4 mb-4 text-red-500 font-bold">
                     Since you have driven more than 5000km since your last oil change, it looks like its time for another one!
                 </p>
+                <img src="{{ asset('mechanic-svgrepo-com.svg') }}" alt="mechanic" class="mx-auto w-50 h-50 mt-4 mb-4" />
                 <!-- Check to see if the last oil change was more than 6 months ago, using copy() so the original date is not modified -->
             @elseif ($formData->last_oil_change_date->copy()->addMonths(6)->isPast())
-                <p class="text-lg mt-4 text-red-500 font-bold">
+                <p class="text-lg mt-4 mb-4 text-red-500 font-bold">
                     Looks like it's been more than 6 months since your last oil change (we have missed you), we'll see you at the shop!
                 </p>
+                <img src="{{ asset('mechanic-svgrepo-com.svg') }}" alt="mechanic" class="mx-auto w-50 h-50 mt-4 mb-4" />
             @else
                 <p class="text-lg text-accent mt-4 mb-4 text-green-500 font-bold">
                     Got some great news for you! It looks like your car is still running on good oil, so your wallet can breathe a sigh of relief (for now)!
                 </p>
+                <img src="{{ asset('wallet-svgrepo-com.svg') }}" alt="wallet" class="mx-auto w-50 h-50 mt-4 mb-4" />
             @endif
             <a
                 href="/"
-                class="btn btn-primary bg-primary hover:bg-secondary text-white font-bold py-2 px-4 rounded"
+                class=" bg-primary grid items-center text-center mx-10 hover:bg-secondary text-white font-bold py-2  rounded"
                 >Go back to the form</a
             >
         </div>
