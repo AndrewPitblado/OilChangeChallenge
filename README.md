@@ -9,7 +9,7 @@ To get the installer and php intalled run the folowing command (Mac): `/bin/bash
 
 Then once the installer is installed run `npm install ` to make sure you have all the latest dependencies
 
-### Migrations/Database setup
+### Migrations/Database setup (I used MacOS, perhaps windows has different terminal commands)
 In order to get things setup on the backend here are some things you'll have to do:
 - Create an .env file (can just copy the example one) ```cp .env.example .env.```
 
