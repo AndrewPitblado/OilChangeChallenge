@@ -24,6 +24,9 @@ class FormController extends Controller
             'current_odometer' => 'required|integer|min:0|gte:previous_odometer',
             'previous_odometer' => 'required|integer|min:0',
             'last_oil_change_date' => 'required|date|before:today',
+        ],[
+            'current_odometer.gte' => 'The current odometer reading must be greater than or equal to the previous odometer reading.',
+            'last_oil_change_date.before' => 'The last oil change date must be a date before today.',
         ]);
         //Create an instance of the FormData model, save to the database, and redirect user to results page.
         $formData = FormData::create($validatedData);
